@@ -19,7 +19,7 @@ class DeletePokemonViewController: UIViewController {
     @IBOutlet var numberField: UITextField!
     
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
-        delegate?.deletePokemon(pokemon: myPokemon!)
+        delegate?.deletePokemon(pokemon: myPokemon!, noneLeft: false)
     }
     
     override func viewDidLoad() {

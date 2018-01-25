@@ -39,6 +39,9 @@ class HomeViewController: UIViewController {
         
         fetchAndReload(type: nil)
         
+        pokeTypeArr = []
+        colorArr = []
+        
         for item in pokemonArr {
             
             if pokeTypeArr.contains(item.type!) == false {
@@ -154,13 +157,6 @@ extension HomeViewController: AddPokemonViewControllerDelegate {
     
     func addPokemonUpdateType(name: String, type: String, weight: Double, number: Int) {
         
-         // Add type if it doesn't exist
-        if pokeTypeArr.contains(type) == false {
-            pokeTypeArr.append(type)
-            //add color
-            colorArr.append(.white)
-            myTableView.reloadData()
-        }
         let newPoke:Pokemon = Pokemon(context: managedObjectContext)
         newPoke.name = name
         newPoke.type = type
@@ -168,20 +164,26 @@ extension HomeViewController: AddPokemonViewControllerDelegate {
         newPoke.number = Int64(number)
         saveContext()
         print("saved successfully")
+        fetchAndReload(type: nil)
+        setTableView()
         navigationController?.popViewController(animated: true)
     }
 }
 
 extension HomeViewController: DeletePokemonViewControllerDelegate {
-    func deletePokemon(pokemon: Pokemon) {
+    func deletePokemon(pokemon: Pokemon, noneLeft: Bool) {
         
         print("home delete")
         //del from context and update context
         managedObjectContext.delete(pokemon)
         saveContext()
+        fetchAndReload(type: nil)
         setTableView()
         
         // pop controller
+        if noneLeft == true {
+            navigationController?.popViewController(animated: false)
+        }
         navigationController?.popViewController(animated: true)
     }
     

@@ -15,5 +15,5 @@ protocol AddPokemonViewControllerDelegate {
 
 protocol DeletePokemonViewControllerDelegate {
     
-    func deletePokemon(pokemon: Pokemon)
+    func deletePokemon(pokemon: Pokemon, noneLeft: Bool)
 }

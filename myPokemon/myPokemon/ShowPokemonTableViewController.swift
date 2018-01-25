@@ -65,7 +65,7 @@ class ShowPokemonTableViewController: UITableViewController {
 
 extension ShowPokemonTableViewController: DeletePokemonViewControllerDelegate {
     
-    func deletePokemon(pokemon: Pokemon) {
+    func deletePokemon(pokemon: Pokemon, noneLeft: Bool) {
         
         print("will delete " + pokemon.name!)
         for i in 0...self.pokemon!.count - 1 {
@@ -73,8 +73,11 @@ extension ShowPokemonTableViewController: DeletePokemonViewControllerDelegate {
                 self.pokemon!.remove(at: i)
             }
         }
-        
-        delegate?.deletePokemon(pokemon: pokemon)
+        var totalLeft:Bool = false
+        if self.pokemon?.count == 0 {
+            totalLeft = true
+        }
+        delegate?.deletePokemon(pokemon: pokemon, noneLeft: totalLeft)
         tableView.reloadData()
     }
     
