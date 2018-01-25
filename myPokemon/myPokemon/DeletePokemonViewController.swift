@@ -10,10 +10,27 @@ import UIKit
 
 class DeletePokemonViewController: UIViewController {
 
+    var delegate: DeletePokemonViewControllerDelegate?
+    var myPokemon: Pokemon?
+    
+    @IBOutlet var nameField: UITextField!
+    @IBOutlet var typeField: UITextField!
+    @IBOutlet var weightField: UITextField!
+    @IBOutlet var numberField: UITextField!
+    
+    @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        delegate?.deletePokemon(pokemon: myPokemon!)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+//        delegate = navigationController?.topViewController! as! HomeViewController
+        
+        nameField.text = myPokemon?.name
+        typeField.text = myPokemon?.type
+        weightField.text = String(describing: myPokemon!.weight)
+        numberField.text = String(describing: myPokemon!.number)
     }
 
     override func didReceiveMemoryWarning() {

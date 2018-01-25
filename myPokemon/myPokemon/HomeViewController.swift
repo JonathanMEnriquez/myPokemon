@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     
     var pokeTypeArr = ["Fire", "Water", "Grass", "Rock", "Electric"]
     var colorArr: [UIColor] = [.red, .blue, .green, .gray, .orange]
+    var pokemonArr = [Pokemon]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,7 @@ class HomeViewController: UIViewController {
     
     func saveContext() {
         
+        print("in save context")
         if managedObjectContext.hasChanges {
             
             do {
@@ -43,13 +45,17 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func fetchAndReload() {
+    func fetchAndReload(type: String?) {
         
         let request:NSFetchRequest<Pokemon> = Pokemon.fetchRequest()
         
+        if let myType = type {
+            request.predicate = NSPredicate(format: "type CONTAINS %@", myType)
+        }
+        
         do {
-            let result = try managedObjectContext.fetch(request) as! [Pokemon]
-            //
+            let result = try managedObjectContext.fetch(request)
+            pokemonArr = result
         } catch {
             print("failed in fetch", error)
         }
@@ -57,13 +63,32 @@ class HomeViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let destination = segue.destination as! AddPokemonViewController
-        
-        destination.delegate = self
+        if segue.identifier == "addPokemonSegue" {
+            let destination = segue.destination as! AddPokemonViewController
+            destination.delegate = self
+        }
+        if segue.identifier == "showPokemonSegue" {
+            let destination = segue.destination as! ShowPokemonTableViewController
+            let cell = sender as! IndexPath
+            let type = pokeTypeArr[cell.row]
+            destination.type = type
+            fetchAndReload(type: type)
+            print(pokemonArr.count)
+            destination.pokemon = pokemonArr
+            destination.tableView.backgroundColor = colorArr[cell.row]
+        }
     }
 }
 
 extension HomeViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "showPokemonSegue", sender: indexPath)
+    }
+}
+
+extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -82,28 +107,23 @@ extension HomeViewController: UITableViewDelegate {
     }
 }
 
-extension HomeViewController: UITableViewDataSource {
-    
-    
-}
-
 extension HomeViewController: AddPokemonViewControllerDelegate {
     
     func addPokemonUpdateType(name: String, type: String, weight: Double, number: Int) {
         
-        // Add type if it doesn't exist
+         // Add type if it doesn't exist
         if pokeTypeArr.contains(type) == false {
             pokeTypeArr.append(type)
             //add color
             colorArr.append(.white)
             myTableView.reloadData()
         }
-        
-        let newPoke = Pokemon(context: managedObjectContext)
+        let newPoke:Pokemon = Pokemon(context: managedObjectContext)
         newPoke.name = name
         newPoke.type = type
         newPoke.weight = weight
         newPoke.number = Int64(number)
+        saveContext()
         print("saved successfully")
         navigationController?.popViewController(animated: true)
     }

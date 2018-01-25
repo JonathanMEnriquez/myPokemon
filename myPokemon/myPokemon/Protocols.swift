@@ -12,3 +12,8 @@ protocol AddPokemonViewControllerDelegate {
     
     func addPokemonUpdateType(name: String, type: String, weight: Double, number: Int)
 }
+
+protocol DeletePokemonViewControllerDelegate {
+    
+    func deletePokemon(pokemon: Pokemon)
+}

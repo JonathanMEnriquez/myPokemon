@@ -16,9 +16,9 @@
 		CE0F84B720192E3800D81796 /* myPokemonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F84B620192E3800D81796 /* myPokemonTests.swift */; };
 		CE0F84C220192E3800D81796 /* myPokemonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F84C120192E3800D81796 /* myPokemonUITests.swift */; };
 		CE0F84D02019306500D81796 /* AddPokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F84CF2019306500D81796 /* AddPokemonViewController.swift */; };
-		CE0F84D22019312000D81796 /* TypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F84D12019312000D81796 /* TypeViewController.swift */; };
 		CE0F84D42019314100D81796 /* DeletePokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F84D32019314100D81796 /* DeletePokemonViewController.swift */; };
 		CE0F84D620193D4C00D81796 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F84D520193D4C00D81796 /* Protocols.swift */; };
+		CED07F962019699C00F0FAF2 /* ShowPokemonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED07F952019699C00F0FAF2 /* ShowPokemonTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +54,9 @@
 		CE0F84C120192E3800D81796 /* myPokemonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myPokemonUITests.swift; sourceTree = "<group>"; };
 		CE0F84C320192E3800D81796 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE0F84CF2019306500D81796 /* AddPokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPokemonViewController.swift; sourceTree = "<group>"; };
-		CE0F84D12019312000D81796 /* TypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeViewController.swift; sourceTree = "<group>"; };
 		CE0F84D32019314100D81796 /* DeletePokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePokemonViewController.swift; sourceTree = "<group>"; };
 		CE0F84D520193D4C00D81796 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		CED07F952019699C00F0FAF2 /* ShowPokemonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPokemonTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +110,7 @@
 				CE0F84A220192E3800D81796 /* Main.storyboard */,
 				CE0F84A020192E3800D81796 /* HomeViewController.swift */,
 				CE0F84CF2019306500D81796 /* AddPokemonViewController.swift */,
-				CE0F84D12019312000D81796 /* TypeViewController.swift */,
+				CED07F952019699C00F0FAF2 /* ShowPokemonTableViewController.swift */,
 				CE0F84D32019314100D81796 /* DeletePokemonViewController.swift */,
 				CE0F84A820192E3800D81796 /* Assets.xcassets */,
 				CE0F84AA20192E3800D81796 /* LaunchScreen.storyboard */,
@@ -276,8 +276,8 @@
 			files = (
 				CE0F84A120192E3800D81796 /* HomeViewController.swift in Sources */,
 				CE0F84D42019314100D81796 /* DeletePokemonViewController.swift in Sources */,
+				CED07F962019699C00F0FAF2 /* ShowPokemonTableViewController.swift in Sources */,
 				CE0F84D620193D4C00D81796 /* Protocols.swift in Sources */,
-				CE0F84D22019312000D81796 /* TypeViewController.swift in Sources */,
 				CE0F84A720192E3800D81796 /* myPokemon.xcdatamodeld in Sources */,
 				CE0F84D02019306500D81796 /* AddPokemonViewController.swift in Sources */,
 				CE0F849F20192E3800D81796 /* AppDelegate.swift in Sources */,
