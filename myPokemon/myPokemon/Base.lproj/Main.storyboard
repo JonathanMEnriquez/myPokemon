@@ -217,10 +217,12 @@
                                     <constraint firstAttribute="height" constant="234" id="hel-VN-nnI"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vxn-Qg-sfJ">
-                                <rect key="frame" x="151" y="442" width="73" height="30"/>
-                                <state key="normal" title="Delete">
-                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vxn-Qg-sfJ">
+                                <rect key="frame" x="112" y="455" width="150" height="52"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Release!">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="deleteButtonPressed:" destination="pQ1-Sh-Eek" eventType="touchUpInside" id="mur-4e-904"/>
@@ -229,10 +231,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.69945204260000005" green="0.80396759510000004" blue="0.91354793310000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="gZ6-4N-90Z" firstAttribute="trailing" secondItem="Vxn-Qg-sfJ" secondAttribute="trailing" constant="151" id="4v9-sV-EbY"/>
+                            <constraint firstItem="gZ6-4N-90Z" firstAttribute="trailing" secondItem="Vxn-Qg-sfJ" secondAttribute="trailing" constant="113" id="4v9-sV-EbY"/>
                             <constraint firstItem="xyR-jV-GLF" firstAttribute="leading" secondItem="gZ6-4N-90Z" secondAttribute="leading" constant="138" id="5aI-cp-oEU"/>
-                            <constraint firstItem="Vxn-Qg-sfJ" firstAttribute="top" secondItem="6Bl-ji-GVp" secondAttribute="bottom" constant="48" id="FAy-CV-UwA"/>
-                            <constraint firstItem="Vxn-Qg-sfJ" firstAttribute="leading" secondItem="gZ6-4N-90Z" secondAttribute="leading" constant="151" id="Pnn-dy-erI"/>
+                            <constraint firstItem="Vxn-Qg-sfJ" firstAttribute="top" secondItem="6Bl-ji-GVp" secondAttribute="bottom" constant="61.5" id="FAy-CV-UwA"/>
+                            <constraint firstItem="Vxn-Qg-sfJ" firstAttribute="leading" secondItem="gZ6-4N-90Z" secondAttribute="leading" constant="112" id="Pnn-dy-erI"/>
                             <constraint firstItem="gZ6-4N-90Z" firstAttribute="trailing" secondItem="xyR-jV-GLF" secondAttribute="trailing" constant="138" id="VgE-by-WyI"/>
                             <constraint firstItem="xyR-jV-GLF" firstAttribute="top" secondItem="gZ6-4N-90Z" secondAttribute="top" id="bhU-6y-RsN"/>
                             <constraint firstItem="6Bl-ji-GVp" firstAttribute="top" secondItem="xyR-jV-GLF" secondAttribute="bottom" constant="69" id="p58-NY-LL6"/>
