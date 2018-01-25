@@ -12,6 +12,7 @@ class ShowPokemonTableViewController: UITableViewController {
 
     var type:String?
     var pokemon: [Pokemon]?
+    var delegate: DeletePokemonViewControllerDelegate?
     
     @IBOutlet var typeLabel: UILabel!
     
@@ -67,6 +68,14 @@ extension ShowPokemonTableViewController: DeletePokemonViewControllerDelegate {
     func deletePokemon(pokemon: Pokemon) {
         
         print("will delete " + pokemon.name!)
+        for i in 0...self.pokemon!.count - 1 {
+            if self.pokemon![i] == pokemon {
+                self.pokemon!.remove(at: i)
+            }
+        }
+        
+        delegate?.deletePokemon(pokemon: pokemon)
+        tableView.reloadData()
     }
     
 }

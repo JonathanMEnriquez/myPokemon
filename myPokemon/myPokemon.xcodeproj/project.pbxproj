@@ -18,6 +18,7 @@
 		CE0F84D02019306500D81796 /* AddPokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F84CF2019306500D81796 /* AddPokemonViewController.swift */; };
 		CE0F84D42019314100D81796 /* DeletePokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F84D32019314100D81796 /* DeletePokemonViewController.swift */; };
 		CE0F84D620193D4C00D81796 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F84D520193D4C00D81796 /* Protocols.swift */; };
+		CE0FAF1F201A6372005AE64F /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FAF1E201A6372005AE64F /* MainCell.swift */; };
 		CED07F962019699C00F0FAF2 /* ShowPokemonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED07F952019699C00F0FAF2 /* ShowPokemonTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		CE0F84CF2019306500D81796 /* AddPokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPokemonViewController.swift; sourceTree = "<group>"; };
 		CE0F84D32019314100D81796 /* DeletePokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePokemonViewController.swift; sourceTree = "<group>"; };
 		CE0F84D520193D4C00D81796 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		CE0FAF1E201A6372005AE64F /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		CED07F952019699C00F0FAF2 /* ShowPokemonTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPokemonTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +120,7 @@
 				CE0F849E20192E3800D81796 /* AppDelegate.swift */,
 				CE0F84A520192E3800D81796 /* myPokemon.xcdatamodeld */,
 				CE0F84D520193D4C00D81796 /* Protocols.swift */,
+				CE0FAF1E201A6372005AE64F /* MainCell.swift */,
 			);
 			path = myPokemon;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				CE0F84D620193D4C00D81796 /* Protocols.swift in Sources */,
 				CE0F84A720192E3800D81796 /* myPokemon.xcdatamodeld in Sources */,
 				CE0F84D02019306500D81796 /* AddPokemonViewController.swift in Sources */,
+				CE0FAF1F201A6372005AE64F /* MainCell.swift in Sources */,
 				CE0F849F20192E3800D81796 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

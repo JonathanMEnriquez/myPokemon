@@ -15,13 +15,19 @@ class HomeViewController: UIViewController {
 
     @IBOutlet var myTableView: UITableView!
     
-    var pokeTypeArr = ["Fire", "Water", "Grass", "Rock", "Electric"]
-    var colorArr: [UIColor] = [.red, .blue, .green, .gray, .orange]
+    var pokeTypeArr = [String]()
+    var colorArr = [UIColor]()
     var pokemonArr = [Pokemon]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        setTableView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        setTableView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +35,38 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func setTableView() {
+        
+        fetchAndReload(type: nil)
+        
+        for item in pokemonArr {
+            
+            if pokeTypeArr.contains(item.type!) == false {
+                pokeTypeArr.append(item.type!)
+                if item.type == "Fire" {
+                    colorArr.append(.red)
+                }
+                else if item.type == "Water" {
+                    colorArr.append(.blue)
+                }
+                else if item.type == "Grass" {
+                    colorArr.append(.green)
+                }
+                else if item.type == "Rock" {
+                    colorArr.append(.gray)
+                }
+                else if item.type == "Electric" {
+                    colorArr.append(.orange)
+                }
+                else {
+                    let randomColor = arc4random_uniform(UInt32(colorArr.count))
+                    colorArr.append(colorArr[Int(randomColor)])
+                }
+            }
+        }
+        
+        myTableView.reloadData()
+    }
 
     //Core Data
     
@@ -72,6 +110,7 @@ class HomeViewController: UIViewController {
             let cell = sender as! IndexPath
             let type = pokeTypeArr[cell.row]
             destination.type = type
+            destination.delegate = self
             fetchAndReload(type: type)
             print(pokemonArr.count)
             destination.pokemon = pokemonArr
@@ -100,9 +139,13 @@ extension HomeViewController: UITableViewDataSource {
         let cell = myTableView.dequeueReusableCell(withIdentifier: "BasicCell", for: indexPath)
         let type = pokeTypeArr[indexPath.row]
         cell.textLabel?.text = "My " + type + " Type"
+        cell.textLabel?.font = UIFont(name: "Chalkboard SE", size: 14)
         cell.textLabel?.textColor = .white
         cell.backgroundColor = colorArr[indexPath.row]
-        tableView.rowHeight = 105
+        tableView.rowHeight = 80
+//        tableView.separatorInset.bottom = 10.0
+//        tableView.separatorColor = .white
+//        tableView.separatorStyle = .singleLine
         return cell
     }
 }
@@ -127,4 +170,20 @@ extension HomeViewController: AddPokemonViewControllerDelegate {
         print("saved successfully")
         navigationController?.popViewController(animated: true)
     }
+}
+
+extension HomeViewController: DeletePokemonViewControllerDelegate {
+    func deletePokemon(pokemon: Pokemon) {
+        
+        print("home delete")
+        //del from context and update context
+        managedObjectContext.delete(pokemon)
+        saveContext()
+        setTableView()
+        
+        // pop controller
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
 }

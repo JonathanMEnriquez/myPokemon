@@ -19,14 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5vM-Gz-Doh">
-                                <rect key="frame" x="8" y="136" width="359" height="539"/>
+                                <rect key="frame" x="24" y="136" width="327" height="539"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BasicCell" id="qMo-km-bak">
-                                        <rect key="frame" x="0.0" y="28" width="359" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="327" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qMo-km-bak" id="QgQ-24-VQg">
-                                            <rect key="frame" x="0.0" y="0.0" width="359" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="327" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -47,8 +47,8 @@
                         <color key="backgroundColor" red="0.69945204260000005" green="0.80396759510000004" blue="0.91354793310000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.69945204257965088" green="0.80396759510040283" blue="0.91354793310165405" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="5vM-Gz-Doh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="HbB-HF-6L8"/>
-                            <constraint firstAttribute="trailing" secondItem="5vM-Gz-Doh" secondAttribute="trailing" constant="8" id="OKL-Tj-Tvg"/>
+                            <constraint firstItem="5vM-Gz-Doh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="HbB-HF-6L8"/>
+                            <constraint firstAttribute="trailing" secondItem="5vM-Gz-Doh" secondAttribute="trailing" constant="24" id="OKL-Tj-Tvg"/>
                             <constraint firstItem="ISY-cK-i4I" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="52" id="VOI-FR-N9V"/>
                             <constraint firstItem="5vM-Gz-Doh" firstAttribute="top" secondItem="ISY-cK-i4I" secondAttribute="bottom" constant="-4" id="X7S-ah-T3w"/>
                             <constraint firstItem="ISY-cK-i4I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hXZ-FJ-uiF"/>
@@ -83,7 +83,7 @@
                         <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9PR-Ax-ttF">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
